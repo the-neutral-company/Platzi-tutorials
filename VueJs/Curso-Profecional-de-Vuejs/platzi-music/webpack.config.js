@@ -77,11 +77,11 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true,
+    noInfo: false, // lo cambio a fale para loguear mas info
     overlay: true
   },
   performance: {
-    hints: false
+    hints: true // cambio a true para recibir notoficaciones de rendimiento
   },
   devtool: '#eval-source-map'
 }
