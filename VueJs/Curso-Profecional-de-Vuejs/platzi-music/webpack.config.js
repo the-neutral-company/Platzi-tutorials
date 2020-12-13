@@ -10,12 +10,19 @@ module.exports = {
   },
   module: {
     rules: [
+      // nueva regla para eslint
+      {
+        test: /\.(js|vue)$/, // indica el tipo de archivo donde se aplica eslint
+        loader: 'eslint-loader', // nombre del loader
+        enforce: 'pre', // indica que se debe ejecutar antes a todos los demas (antes de que se compile)
+        include: [path.resolve(__dirname, './src')] // donde estan los archivos que debe lintear
+      },
       {
         test: /\.css$/,
         use: [
           'vue-style-loader',
           'css-loader'
-        ],
+        ]
       },
       {
         test: /\.scss$/,
@@ -23,7 +30,7 @@ module.exports = {
           'vue-style-loader',
           'css-loader',
           'sass-loader'
-        ],
+        ]
       },
       {
         test: /\.sass$/,
@@ -31,7 +38,7 @@ module.exports = {
           'vue-style-loader',
           'css-loader',
           'sass-loader?indentedSyntax'
-        ],
+        ]
       },
       {
         test: /\.vue$/,
@@ -41,12 +48,12 @@ module.exports = {
             // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
             // the "scss" and "sass" values for the lang attribute to the right configs here.
             // other preprocessors should work out of the box, no loader config like this necessary.
-            'scss': [
+            scss: [
               'vue-style-loader',
               'css-loader',
               'sass-loader'
             ],
-            'sass': [
+            sass: [
               'vue-style-loader',
               'css-loader',
               'sass-loader?indentedSyntax'
@@ -71,7 +78,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      vue$: 'vue/dist/vue.esm.js'
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
