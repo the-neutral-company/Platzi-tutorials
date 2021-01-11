@@ -4,8 +4,9 @@ class Review extends StatelessWidget {
   String parhImage = 'assets/images/neutral.jpg';
   String name = 'Alan Brito';
   String details = '1 photo 4 reviews';
+  String comment;
 
-  Review(this.parhImage, this.name, this.details);
+  Review(this.parhImage, this.name, this.details, this.comment);
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +67,7 @@ class Review extends StatelessWidget {
       ),
 
       child: Text(
-        details,
+        comment,
         textAlign: TextAlign.left,
         style: TextStyle(
             fontFamily: 'Lato',
@@ -88,7 +89,7 @@ class Review extends StatelessWidget {
     return Row(
       children: [
         photo,
-        userDetails
+        userDetails,
       ],
     );
     throw UnimplementedError();

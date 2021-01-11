@@ -8,8 +8,8 @@ class ReviewList extends StatelessWidget {
 
     return Column(
       children: [
-        Review('assets/images/neutral.jpg', 'Alan Brito', '10 photos 1 comment'),
-        Review('assets/images/neutral.jpg', 'Esteban Dido', '0 photos 3 comment')
+        Review('assets/images/neutral.jpg', 'Alan Brito', '10 photos 1 comment', 'Wena wena!!!'),
+        Review('assets/images/neutral.jpg', 'Esteban Dido', '0 photos 3 comment', 'Mish!')
       ],
     );
 
