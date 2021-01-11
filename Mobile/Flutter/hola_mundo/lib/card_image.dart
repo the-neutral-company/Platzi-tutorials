@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CardImages extends StatelessWidget {
+class CardImage extends StatelessWidget {
   String imagePath;
 
-  CardImages(this.imagePath);
+  CardImage(this.imagePath);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
